@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -260,6 +260,8 @@ namespace OpenCVTest
 
                             if (!afterProcessImage.Empty())
                                 Cv2.ImWrite(Path.Combine(newFullPath, Path.GetFileName(imagePath)), afterProcessImage);
+
+                            GC.Collect();
                         }
 
                         MessageBox.Show("파일이 성공적으로 저장되었습니다: " + newFullPath);
